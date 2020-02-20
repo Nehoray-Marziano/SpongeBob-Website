@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="sponge.css">
+        <h1>Spongebob SquarePants</h1>
+    </head>
+    <body>
+        <p>
+            <img id="spongebob" src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/SpongeBob_SquarePants_character.svg/220px-SpongeBob_SquarePants_character.svg.png" placeholder="SpongeBob SquarePants" width="500" class="center"/>
+        </p>
+        <p><img id="gif" src="https://media1.giphy.com/media/SKGo6OYe24EBG/200.webp?cid=790b761194f572b898786b575cea69a60ffabdb6503b9f25&rid=200.webp" placeholder="SpongeBob SquarePants" width="500" class="center"></p>
+        <p>
+            SpongeBob SquarePants is the title character and protagonist of the American animated television series of the same name.<br/> He is voiced by actor and comedian Tom Kenny and first appeared on television in the series' pilot episode "Help Wanted" on May 1, 1999.<br/> Spongebob is a yellow sea sponge living in a house which looks like a pineapple,and is a fry cook at the 'Krusty Krab' restaurant.
+        </p>
+        <h2>Achievments:</h2>
+        <ul>
+            <li>Having Gary for so long</li>
+            <li>Staying alive</li>
+            <li>Not getting killed by Squidward</li>
+            <li>Master at catching jellyfish</li>
+            <li>Knows the recipe of the holly Krabby Patty (probably)</li>
+        </ul>
+        <h3>Tell us what you think about Spongbob!</h3>
+        <form action="http://localhost:3000/sendmail" method="post" onsubmit="return checkFormValidity(this);">
+            <input type="text" placeholder="Name" name="name"/><br>
+            <input type="email" placeholder="E-mail" name="email" /><br>
+            <input type="text" placeholder="Thoughts" name="thoughts" /><br>
+            <button type="submit" name="submit">Bikini Bottom!</button><br>
+            </button>
+        </form>
+
+        <script type="text/javascript">
+            function checkFormValidity(form){//function to check that everything in the form is there and is legal
+                if(form.name.value==""){
+                    alert("Please enter your name");
+                    form.name.focus();
+                    return false;
+                }
+                if(form.email.value==""){
+                    alert("Please enter you email address");
+                    form.email.focus();
+                    return false;
+                }
+                if(form.thoughts.value==""){
+                    alert("Your opinion is very important to us! Let's hear what you have to say!");
+                    form.thoughts.focus();
+                    return false;
+                }
+                var legal= /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/i;
+
+                if(!legal.test(form.email.value)){
+                    alert("illegal letter(s) found!");
+                    form.email.focus();
+                    return false;
+                }
+                return true;
+            }
+        </script>
+    </body>
+</html>
